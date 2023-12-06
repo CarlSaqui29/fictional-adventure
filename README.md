@@ -1,7 +1,7 @@
 # Article App
 A mini project to familiarize and practice Ruby Rails commands and structure.
 
-### Create and Start the app
+### Create rails app
 This setup will not be using webpack so we will add skip flag to skip webpack
 ```
 rails _6.1.7.5_ new app --skip-webpack-install --skip-turbolinks
@@ -39,6 +39,32 @@ Go to app/views/layouts/application.html.erb then change `<%= javascript_pack_ta
 ```
 <%= javascript_include_tag 'application' %>
 ```
+
+### Test app
+To test the application run
+```
+rake test
+```
+An error occur saying failed to the WelcomeControllerTest#test_should_get_index
+```
+Error:
+WelcomeControllerTest#test_should_get_index:
+NameError: undefined local variable or method `welcome_index_url' for #<WelcomeControllerTest:0x000000012ddbf758>
+    test/controllers/welcome_controller_test.rb:5:in `block in <class:WelcomeControllerTest>'
+```
+Since we change the root route from `get 'welcome/index'` to `root 'welcome#index` we need to make adjustment to WelcomeControllerTest
+```
+require "test_helper"
+
+class WelcomeControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    # Instead of using welcome_index_url, you can use the root_url
+    get root_url
+    assert_response :success
+  end
+end
+```
+This will fix the test failed error
 
 ### Generate scaffold
 To generate scaffold run the command below and give it a name: Article with the attributes of title and description.
