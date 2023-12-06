@@ -66,6 +66,24 @@ end
 ```
 This will fix the test failed error
 
+### Using Haml
+Add this to gem file
+```
+# Use haml for format
+gem "haml-rails", "~> 2.0"
+gem 'html2haml'
+```
+Then run this on terminal
+```
+gem install html2haml
+```
+Then run `bundle install`
+To convert all the .html.erb files to haml use this command
+```
+rails haml:erb2haml
+```
+For more information how to use haml go [here](https://github.com/haml/haml-rails)
+
 ### Generate scaffold
 To generate scaffold run the command below and give it a name: Article with the attributes of title and description.
 ```
