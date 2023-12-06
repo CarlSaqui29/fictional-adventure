@@ -84,6 +84,29 @@ rails haml:erb2haml
 ```
 For more information how to use haml go [here](https://github.com/haml/haml-rails)
 
+### Using Bootstrap
+Add this gem on Gemfile then run bundle install
+```
+# Use bootstrap for fast building UI
+gem 'bootstrap', '~> 5.3.2'
+gem 'jquery-rails'
+```
+Create a folder named common under /stylesheets then add main.scss and add this line
+```
+@import "bootstrap";
+```
+Then import the main.scss on application.css
+```
+*= require common/main
+```
+On application.js add this code
+```
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+```
+add bootstrap component to test if bootstrap is working
+
 ### Generate scaffold
 To generate scaffold run the command below and give it a name: Article with the attributes of title and description.
 ```
