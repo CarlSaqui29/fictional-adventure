@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   resources :article_configs
-  root 'welcome#index'
+  root 'article_configs#index'
 end
