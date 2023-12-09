@@ -1,0 +1,23 @@
+%h1 Listing article_configs
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @article_configs.each do |article_config|
+      %tr
+        %td= article_config.title
+        %td= article_config.description
+        %td= link_to 'Show', article_config
+        %td= link_to 'Edit', edit_article_config_path(article_config)
+        %td= link_to 'Destroy', article_config, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Article config', new_article_config_path

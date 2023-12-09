@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @article_config.title
+%p
+  %b Description:
+  = @article_config.description
+
+= link_to 'Edit', edit_article_config_path(@article_config)
+\|
+= link_to 'Back', article_configs_path
