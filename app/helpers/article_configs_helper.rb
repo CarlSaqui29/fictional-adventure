@@ -1,0 +1,2 @@
+module ArticleConfigsHelper
+end

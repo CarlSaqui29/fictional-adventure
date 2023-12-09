@@ -1,0 +1,2 @@
+class ArticleConfig < ApplicationRecord
+end

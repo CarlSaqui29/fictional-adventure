@@ -108,7 +108,7 @@ On application.js add this code
 add bootstrap component to test if bootstrap is working
 
 ### Generate scaffold
-To generate scaffold run the command below and give it a name: Article with the attributes of title and description.
+To generate scaffold run the command below and give it a name: ArticleConfigs with the attributes of title and description.
 ```
 rails generate scaffold Article title:string description:text
 ```
